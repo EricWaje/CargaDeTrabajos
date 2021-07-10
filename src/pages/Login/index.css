@@ -1,0 +1,24 @@
+.boton{
+    border: 1px solid rgba(58, 58, 58, 0.701);
+    background-color: transparent;
+    color: black;
+    border-radius: 5px;
+    padding: 5px 8px;
+    transition: all 0.2s ease-in-out;
+    font-size: 15px;
+}
+
+.boton:hover{
+    border: 1px solid transparent;
+    background-color: black;
+    color: white;
+}
+
+.boton:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+span{
+    margin-right: 5px;
+}
