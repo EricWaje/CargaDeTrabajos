@@ -3,14 +3,19 @@ import { useHistory } from 'react-router-dom';
 import './index.css';
 
 import { AiFillGithub } from 'react-icons/ai';
-import { login } from '../../firebase/firebase';
+import firebase from 'firebase/app';
 
 const Login = () => {
   const history = useHistory();
 
-  const loginGithub = () => {
-    login();
-    history.push('/home');
+  const iniciarSesion = async () => {
+    const github = new firebase.auth.GithubAuthProvider();
+    await firebase
+      .auth()
+      .signInWithPopup(github)
+      .then(() => {
+        history.push('/home');
+      });
   };
 
   return (
@@ -21,7 +26,7 @@ const Login = () => {
       >
         <div className="col-lg-5 d-flex flex-column align-items-center align-content-center">
           <h2 className="text-center">Bienvenid@!</h2>
-          <button onClick={loginGithub} className="mt-4 boton">
+          <button onClick={iniciarSesion} className="mt-4 boton">
             {' '}
             <span>
               <AiFillGithub size={'2em'} />

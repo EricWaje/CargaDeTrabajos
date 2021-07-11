@@ -13,27 +13,3 @@ const app = firebase.initializeApp({
 
 export const getFirebase = () => app;
 export const getFirestore = () => firebase.firestore(app);
-
-export const login = () => {
-  const github = new firebase.auth.GithubAuthProvider();
-  return firebase
-    .auth()
-    .signInWithPopup(github)
-    .then((user) => {
-      const { additionalUserInfo } = user;
-      const { profile } = additionalUserInfo;
-      const {
-        avatar_url: avatar,
-        html_url: url,
-        id,
-        login: userName,
-      } = profile;
-
-      return {
-        avatar,
-        url,
-        id,
-        userName,
-      };
-    });
-};
