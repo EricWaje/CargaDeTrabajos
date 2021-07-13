@@ -1,11 +1,22 @@
 textarea{
     resize: none;
-    border: 1px solid black;
+    border: none;
+    border: 1px solid rgba(23, 23, 23, 0.392);
     outline: none;
     box-shadow: none;
     border-radius: 5px;
     width: 80%;
     height: 200px;
+    padding: 4px 8px;
+    color: black;
+    display: block;
+}
+
+input{
+    border: 1px solid rgba(23, 23, 23, 0.392);
+    outline: none;
+    box-shadow: none;
+    border-radius: 5px;
     padding: 4px 8px;
     color: black;
     display: block;

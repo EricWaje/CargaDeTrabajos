@@ -25,7 +25,7 @@ const Login = () => {
         style={{ height: '100vh' }}
       >
         <div className="col-lg-5 d-flex flex-column align-items-center align-content-center">
-          <h2 className="text-center">Bienvenid@!</h2>
+          <h2 className="text-center">Bienvenid@! 😎</h2>
           <button onClick={iniciarSesion} className="mt-4 boton">
             {' '}
             <span>

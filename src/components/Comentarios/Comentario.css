@@ -1,0 +1,61 @@
+.contenedor-comentarios{
+    box-shadow: 0px 0px 4px 2px rgba(99, 99, 99, 0.324);
+    max-height: 70vh;
+    overflow:scroll;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.titulo{
+    padding: 10px 10px;
+    background-color: black;
+    color: white;
+  /*   width: 100%; */
+}
+
+.contenedor-comentario{
+    margin: 0px 0px;
+    padding: 10px 0px 5px 0px;
+    border-bottom: 1px solid rgba(162, 162, 162, 0.577);
+}
+
+.avatar-comentario{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.username-comentario{
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 10px;
+    /* color: rgba(99, 99, 99, 0.68); */
+}
+
+.fecha{
+    font-size: 12px;
+    margin-top: 3px;
+    margin-left: 6px;
+    color: rgba(67, 67, 67, 0.892);
+}
+
+.content{
+    margin: 0px;
+    font-size: 15px;
+}
+
+.link{
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
+}
+
+.link:hover{
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}
+

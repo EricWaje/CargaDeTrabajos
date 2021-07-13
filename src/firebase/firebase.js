@@ -3,12 +3,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const app = firebase.initializeApp({
-  apiKey: 'AIzaSyBuQXojvYUSXXo0GlFf_0BpwkrvIYF8C_s',
-  authDomain: 'test-beee0.firebaseapp.com',
-  projectId: 'test-beee0',
-  storageBucket: 'test-beee0.appspot.com',
-  messagingSenderId: '91795770238',
-  appId: '1:91795770238:web:2aa76844320100a86e812f',
+  apiKey: 'AIzaSyBeLu5JKe7JQKmtM7aUafiE0u8BsNQV3PU',
+  authDomain: 'test-24728.firebaseapp.com',
+  projectId: 'test-24728',
+  storageBucket: 'test-24728.appspot.com',
+  messagingSenderId: '829492956462',
+  appId: '1:829492956462:web:67e10adad967ed1a5bbebf',
 });
 
 export const getFirebase = () => app;
