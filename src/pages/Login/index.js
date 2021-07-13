@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import './index.css';
 
 import { AiFillGithub } from 'react-icons/ai';
 import firebase from 'firebase/app';
+import { UserContext } from '../../context/UserContext';
 
 const Login = () => {
+  const { traerNombre } = useContext(UserContext);
   const history = useHistory();
 
-  const iniciarSesion = async () => {
+  const iniciarSesion = () => {
     const github = new firebase.auth.GithubAuthProvider();
-    await firebase
+    return firebase
       .auth()
       .signInWithPopup(github)
-      .then(() => {
+      .then((user) => {
+        const { additionalUserInfo } = user;
+        const { username: nombreDeUser } = additionalUserInfo;
+        traerNombre(nombreDeUser);
         history.push('/home');
       });
   };

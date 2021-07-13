@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Comentario.css';
+import { UserContext } from '../../context/UserContext';
 
 const Comentario = ({ avatar, content, createdAt, userId, username, link }) => {
+  const { nombre } = useContext(UserContext);
   return (
     <div className="d-flex flex-row align-content-center contenedor-comentario">
       <img src={avatar} alt="avatar" className="avatar-comentario" />
       <div className="d-flex flex-column">
         <div className="d-flex flex-row align-items-center align-content-center">
-          <h3 className="username-comentario">{username}</h3>
+          {nombre?.length > 0 && (
+            <h3 className="username-comentario">{nombre}</h3>
+          )}
+
           <span className="fecha">~ {createdAt} ~</span>
         </div>
         <div>

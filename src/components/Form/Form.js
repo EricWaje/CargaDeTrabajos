@@ -8,6 +8,7 @@ import { getFirestore } from '../../firebase/firebase';
 const Form = () => {
   const history = useHistory();
   const { user } = useContext(UserContext);
+  const { nombre } = useContext(UserContext);
   const [text, setText] = useState('');
   const [link, setLink] = useState('');
   const [loading, setLoading] = useState(true);
@@ -59,7 +60,7 @@ const Form = () => {
       {user && (
         <div className="col-lg-5">
           <img className="avatar" src={user.photoURL} alt="avatar" />
-          <h2 className="userName">{user.displayName}</h2>
+          {nombre?.length > 0 && <h2 className="userName">{nombre}</h2>}
           <div className="d-flex flex-column justify-content-start align-content-center">
             <form onSubmit={submitForm}>
               <input
