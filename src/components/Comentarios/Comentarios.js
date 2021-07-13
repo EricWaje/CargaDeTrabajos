@@ -5,9 +5,10 @@ import Comentario from './Comentario';
 const Comentarios = () => {
   const [comment, setComment] = useState([]);
 
-  useEffect(() => {
+  const mostrarComentarios = async () => {
     const db = getFirestore();
-    db.collection('comentarios')
+    await db
+      .collection('comentarios')
       .orderBy('createdAt', 'desc')
       .get()
       .then((snap) => {
@@ -16,9 +17,10 @@ const Comentarios = () => {
           const id = doc.id;
           const { createdAt } = data;
           const date = new Date(createdAt.seconds * 1000);
-          const normalizedCreatedAt = new Intl.DateTimeFormat('es-ES').format(
-            date
-          );
+          const normalizedCreatedAt = new Intl.DateTimeFormat('es-ES', {
+            dateStyle: 'full',
+            timeStyle: 'short',
+          }).format(date);
           return {
             ...data,
             id,
@@ -27,12 +29,19 @@ const Comentarios = () => {
         });
         setComment(comentario);
       });
+  };
+
+  useEffect(() => {
+    mostrarComentarios();
   }, []);
 
   return (
     <div className="col-lg-5 p-0 contenedor-comentarios">
       <div className="titulo">
         <h2>Comentarios</h2>
+        <button className="actualizar" onClick={mostrarComentarios}>
+          Actualizar Feed
+        </button>
       </div>
       {comment.map((comm) => (
         <Comentario key={comm.id} {...comm} />

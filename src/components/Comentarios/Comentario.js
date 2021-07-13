@@ -8,7 +8,7 @@ const Comentario = ({ avatar, content, createdAt, userId, username, link }) => {
       <div className="d-flex flex-column">
         <div className="d-flex flex-row align-items-center align-content-center">
           <h3 className="username-comentario">{username}</h3>
-          <span className="fecha">~{createdAt}~</span>
+          <span className="fecha">~ {createdAt} ~</span>
         </div>
         <div>
           <a className="link" href={link} target="_blank" rel="noreferrer">
