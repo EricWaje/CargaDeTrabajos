@@ -26,6 +26,10 @@ const Login = () => {
       >
         <div className="col-lg-5 d-flex flex-column align-items-center align-content-center">
           <h2 className="text-center">Bienvenid@! 😎</h2>
+          <p className="text-center mt-2">
+            Acá van a poder dejar el link de su web y ver los sitios de sus
+            compañer@s 🤟{' '}
+          </p>
           <button onClick={iniciarSesion} className="mt-4 boton">
             {' '}
             <span>
