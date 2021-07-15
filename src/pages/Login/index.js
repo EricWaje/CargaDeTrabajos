@@ -6,6 +6,8 @@ import { AiFillGithub } from 'react-icons/ai';
 import firebase from 'firebase/app';
 import { UserContext } from '../../context/UserContext';
 
+import { FaShareAlt } from 'react-icons/fa';
+
 const Login = () => {
   const { traerNombre } = useContext(UserContext);
   const history = useHistory();
@@ -30,7 +32,8 @@ const Login = () => {
         style={{ height: '100vh' }}
       >
         <div className="col-lg-5 d-flex flex-column align-items-center align-content-center">
-          <h2 className="text-center">Bienvenid@! 😎</h2>
+          <FaShareAlt size={'4em'} className="share" />
+          <h2 className="text-center mt-4">Bienvenid@! 😎</h2>
           <p className="text-center mt-2">
             Acá van a poder dejar el link de su web y ver los sitios de sus
             compañer@s 🤟{' '}

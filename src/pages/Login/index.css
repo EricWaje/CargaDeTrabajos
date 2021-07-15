@@ -22,3 +22,20 @@
 span{
     margin-right: 5px;
 }
+
+.share{
+    animation: sha 3s linear infinite;
+    /* transition: all 0.2s ease-in-out; */
+}
+
+@keyframes sha {
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
