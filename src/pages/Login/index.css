@@ -39,3 +39,15 @@ span{
         opacity: 1;
     }
 }
+
+.verProyectos{
+    color: black; 
+    font-style: italic;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.verProyectos:hover{
+    color: black;
+    text-decoration: underline;
+}

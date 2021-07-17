@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import './index.css';
 
 import { AiFillGithub } from 'react-icons/ai';
@@ -38,13 +38,16 @@ const Login = () => {
             Acá van a poder dejar el link de su web y ver los sitios de sus
             compañer@s 🤟{' '}
           </p>
-          <button onClick={iniciarSesion} className="mt-4 boton">
+          <button onClick={iniciarSesion} className="mt-4 mb-4 boton">
             {' '}
             <span>
               <AiFillGithub size={'2em'} />
             </span>
             Iniciar sesión con Github
           </button>
+          <Link to={'/proyectos'} className="text-center verProyectos">
+            Si solo querés ver los proyectos, hace click acá
+          </Link>
         </div>
       </div>
     </div>

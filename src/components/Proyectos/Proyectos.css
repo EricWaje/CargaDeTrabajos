@@ -1,0 +1,25 @@
+.soloComentarios{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.volver{
+    color: black;
+    margin-top: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid black;
+    font-size: 17px;
+    padding: 4px 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.volver:hover{
+    color: white;
+    background-color: black;
+    text-decoration: none;
+    border: 1px solid transparent;
+}

@@ -4,8 +4,10 @@ import Comentario from './Comentario';
 
 const Comentarios = () => {
   const [comment, setComment] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const mostrarComentarios = async () => {
+    setLoading(true);
     const db = getFirestore();
     await db
       .collection('comentarios')
@@ -28,6 +30,9 @@ const Comentarios = () => {
           };
         });
         setComment(comentario);
+      })
+      .then(() => {
+        setLoading(false);
       });
   };
 
@@ -43,9 +48,15 @@ const Comentarios = () => {
           Actualizar Feed
         </button>
       </div>
-      {comment.map((comm) => (
-        <Comentario key={comm.id} {...comm} />
-      ))}
+      {loading ? (
+        <div className="spinner mt-3 mb-3 ml-3"></div>
+      ) : (
+        <>
+          {comment.map((comm) => (
+            <Comentario key={comm.id} {...comm} />
+          ))}
+        </>
+      )}
     </div>
   );
 };
